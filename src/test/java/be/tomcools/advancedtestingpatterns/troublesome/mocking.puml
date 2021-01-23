@@ -1,0 +1,16 @@
+@startuml
+
+cloud {
+ [Velo Service] as velo #red
+}
+
+package "IN OUR CONTROL" {
+database Database #red
+package "Spring Boot" {
+[Spring Boot Service] #lightgreen
+}
+}
+
+HTTP --> [Spring Boot Service]: REST API
+
+@enduml

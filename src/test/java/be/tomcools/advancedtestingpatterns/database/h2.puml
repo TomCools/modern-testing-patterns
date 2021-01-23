@@ -1,0 +1,22 @@
+@startuml
+
+
+cloud {
+ [Velo Service] as velo
+}
+
+package "IN OUR CONTROL" {
+
+package "Spring Boot" {
+database "In Memory Database" as Database
+note left: Creates Tables Automatically
+[Spring Boot Service] as spring
+spring <--> Database
+spring <--> velo: Sync every 30 seconds
+
+}
+}
+
+HTTP --> spring: REST API
+
+@enduml

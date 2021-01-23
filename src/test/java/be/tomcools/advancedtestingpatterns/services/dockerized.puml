@@ -1,0 +1,14 @@
+@startuml
+
+package "IN OUR CONTROL" {
+database Database
+ [Velo Service (Dockerized)] as velo #lightblue
+package "Spring Boot" {
+[Spring Boot Service] <--> Database
+[Spring Boot Service] <--> velo: Sync every 30 seconds
+}
+}
+
+HTTP --> [Spring Boot Service]: REST API
+
+@enduml

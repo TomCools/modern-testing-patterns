@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-velostation-table
+      author: tomcools
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: velostation
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: station_pkey
+                  name: id
+                  type: VARCHAR(10)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(250)
+              - column:
+                  name: address
+                  type: VARCHAR(250)
+              - column:
+                  name: bikes
+                  type: VARCHAR(250)
+              - column:
+                  name: lat
+                  type: VARCHAR(250)
+              - column:
+                  name: lon
+                  type: VARCHAR(250)
+              - column:
+                  name: slots
+                  type: VARCHAR(250)
+              - column:
+                  name: station_type
+                  type: VARCHAR(250)
+              - column:
+                  name: status
+                  type: VARCHAR(250)
+              - column:
+                  name: zip
+                  type: VARCHAR(250)
+            tableName: velo_station

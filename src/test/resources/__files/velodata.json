@@ -1,0 +1,25 @@
+[
+  {
+    "address": "Koningin Astridplein",
+    "bikes": "7",
+    "id": "001",
+    "lat": "51.217820000000000000",
+    "lon": "4.420650000000000000",
+    "name": "001- Centraal Station - Astrid",
+    "slots": "25",
+    "stationType": "BIKE",
+    "status": "OPN"
+  },
+  {
+    "address": "KDG Campus",
+    "bikes": "3",
+    "id": "16",
+    "lat": "51.217820000000000000",
+    "lon": "4.420650000000000000",
+    "name": "16 - KDG Campus",
+    "slots": "12",
+    "stationType": "BIKE",
+    "status": "OPN"
+  }
+]
+
