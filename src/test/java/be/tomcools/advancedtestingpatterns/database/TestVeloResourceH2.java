@@ -1,6 +1,5 @@
 package be.tomcools.advancedtestingpatterns.database;
 
-import be.tomcools.advancedtestingpatterns.velo.VeloRepository;
 import be.tomcools.advancedtestingpatterns.velo.VeloResource;
 import be.tomcools.advancedtestingpatterns.velo.VeloStation;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +16,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TestPropertySource(locations = "classpath:h2only.properties")
 public class TestVeloResourceH2 {
 
-    private static final Iterable<VeloStation> TEST_VELO_STATIONS = List.of(VeloStation.builder().id("1").build(),
-            VeloStation.builder().id("2").build());
+    private static final Iterable<VeloStation> TEST_VELO_STATIONS = List.of(
+            VeloStation.builder().id("1").build(),
+            VeloStation.builder().id("2").build()
+    );
 
     @Autowired
     VeloResource sut;

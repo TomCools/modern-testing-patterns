@@ -1,6 +1,5 @@
 package be.tomcools.advancedtestingpatterns.database;
 
-import be.tomcools.advancedtestingpatterns.velo.VeloRepository;
 import be.tomcools.advancedtestingpatterns.velo.VeloResource;
 import be.tomcools.advancedtestingpatterns.velo.VeloStation;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +18,7 @@ public class TestVeloResourceH2WithLiquibase {
 
     private static final Iterable<VeloStation> TEST_VELO_STATIONS = List.of(
             VeloStation.builder().id("1").name("TESTNAME_1").build(),
-            VeloStation.builder().id("2").name("TESTNAME_2").build());
+            VeloStation.builder().id("2").build());
 
     @Autowired
     VeloResource sut;

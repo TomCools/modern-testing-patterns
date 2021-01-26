@@ -1,6 +1,5 @@
 package be.tomcools.advancedtestingpatterns.services;
 
-import be.tomcools.advancedtestingpatterns.database.TestVeloResourcePostgresWithLiquibase;
 import be.tomcools.advancedtestingpatterns.velo.VeloClient;
 import be.tomcools.advancedtestingpatterns.velo.VeloStation;
 import org.junit.jupiter.api.Test;
@@ -11,7 +10,6 @@ import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 

@@ -1,9 +1,7 @@
 package be.tomcools.advancedtestingpatterns.database;
 
-import be.tomcools.advancedtestingpatterns.velo.VeloRepository;
 import be.tomcools.advancedtestingpatterns.velo.VeloResource;
 import be.tomcools.advancedtestingpatterns.velo.VeloStation;
-import org.junit.ClassRule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
