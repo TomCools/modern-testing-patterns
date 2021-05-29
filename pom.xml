@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>be.tomcools</groupId>
+    <artifactId>advanced-testing-patterns</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>advanced-testing-patterns</name>
+    <description>Demo project for Advanced Testing Patterns in Spring Boot</description>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
+
     <modules>
         <module>app</module>
         <module>h2-liquibase</module>
@@ -10,23 +23,12 @@
         <module>wiremock</module>
         <module>spring-cloud-contract</module>
     </modules>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-    <groupId>be.tomcools</groupId>
-    <artifactId>advanced-testing-patterns</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>advanced-testing-patterns</name>
-    <description>Demo project for Advanced Testing Patterns in Spring Boot</description>
 
     <properties>
         <java.version>11</java.version>
-        <testcontainers.version>1.15.1</testcontainers.version>
+        <testcontainers.version>1.15.3</testcontainers.version>
         <wiremock.version>2.27.2</wiremock.version>
-        <spring-cloud-contract.version>3.0.0</spring-cloud-contract.version>
+        <spring-cloud-contract.version>3.0.2</spring-cloud-contract.version>
     </properties>
 
     <dependencies>
@@ -42,12 +44,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
