@@ -1,0 +1,21 @@
+@startuml
+
+
+cloud {
+ [Velo Service] as velo
+}
+
+package "IN OUR CONTROL" {
+database "PostgreSQL (Dockerized)" as Database #lightblue
+package "Spring Boot" {
+[Spring Boot Service] as spring
+spring -> Database: Liquibase: Creates tables on startup
+spring <--> Database
+spring <--> velo: Sync every 30 seconds
+
+}
+}
+
+HTTP --> spring: REST API
+
+@enduml
