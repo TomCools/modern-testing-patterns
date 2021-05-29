@@ -6,10 +6,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.util.TestPropertyValues;
-import org.springframework.context.ApplicationContextInitializer;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.images.builder.ImageFromDockerfile;
 import org.testcontainers.junit.jupiter.Container;
@@ -19,7 +17,6 @@ import java.util.List;
 
 @Testcontainers
 @SpringBootTest
-@ContextConfiguration(initializers = {TestVeloClientTestContainers.Initializer.class})
 class TestVeloClientTestContainers {
 
     @Autowired
@@ -37,17 +34,9 @@ class TestVeloClientTestContainers {
             new ImageFromDockerfile()
                     .withFileFromClasspath(".", "velotestcontainer/"));
 
-    static class Initializer
-            implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-        public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
-            final String url = createVeloUrl();
-            TestPropertyValues.of(
-                    "app.velo.url=" + url
-            ).applyTo(configurableApplicationContext.getEnvironment());
-        }
-
-        private String createVeloUrl() {
-            return String.format("http://%s:%d/velodata", VELOCONTAINER.getContainerIpAddress(), VELOCONTAINER.getMappedPort(80));
-        }
+    @DynamicPropertySource
+    static void registerApiUrl(DynamicPropertyRegistry registry) {
+        registry.add("app.velo.url", () -> String.format("http://%s:%d/velodata", VELOCONTAINER.getContainerIpAddress(), VELOCONTAINER.getMappedPort(80)));
     }
+
 }
