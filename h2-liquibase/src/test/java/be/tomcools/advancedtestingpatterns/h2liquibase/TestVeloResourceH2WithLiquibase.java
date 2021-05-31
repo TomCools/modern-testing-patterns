@@ -2,6 +2,7 @@ package be.tomcools.advancedtestingpatterns.h2liquibase;
 
 import be.tomcools.advancedtestingpatterns.app.velo.VeloResource;
 import be.tomcools.advancedtestingpatterns.app.velo.VeloStation;
+import liquibase.Liquibase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

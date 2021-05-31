@@ -1,12 +1,13 @@
 databaseChangeLog:
+  - preConditions:
+      onFail: MARK_RAN
+      not:
+        tableExists:
+          tableName: velostation
+
   - changeSet:
       id: create-velostation-table
       author: tomcools
-      preConditions:
-        - onFail: MARK_RAN
-          not:
-            tableExists:
-              tableName: velostation
       changes:
         - createTable:
             columns:

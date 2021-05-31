@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: db/changelog/migrations/001-setup-velostation-table.yaml
+  - include:
+      file: db/changelog/migrations/002-add-constraint.yaml

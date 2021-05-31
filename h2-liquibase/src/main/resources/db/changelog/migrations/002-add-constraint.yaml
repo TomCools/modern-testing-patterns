@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-velostation-stationtype-required-constraint
+      author: tomcools
+      context: NEW
+      changes:
+        - addNotNullConstraint:
+            tableName: velo_station
+            columnName: station_type
