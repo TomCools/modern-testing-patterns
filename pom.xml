@@ -22,6 +22,7 @@
         <module>testcontainers</module>
         <module>wiremock</module>
         <module>spring-cloud-contract</module>
+        <module>spring-cloud-contract-consumer</module>
     </modules>
 
     <properties>
