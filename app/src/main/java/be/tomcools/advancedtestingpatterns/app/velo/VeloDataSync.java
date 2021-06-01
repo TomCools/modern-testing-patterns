@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import java.util.Optional;
 
 @ConditionalOnProperty(
-        value = "app.scheduling.enable", havingValue = "true", matchIfMissing = true
+        value = "app.scheduling.enable", havingValue = "true", matchIfMissing = false
 )
 @Configuration
 @Slf4j
