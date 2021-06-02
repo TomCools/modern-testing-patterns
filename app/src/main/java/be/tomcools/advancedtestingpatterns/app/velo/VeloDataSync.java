@@ -1,42 +1,47 @@
 package be.tomcools.advancedtestingpatterns.app.velo;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.Optional;
 
-@ConditionalOnProperty(
-        value = "app.scheduling.enable", havingValue = "true", matchIfMissing = false
-)
 @Configuration
 @Slf4j
 public class VeloDataSync {
 
     private final VeloClient client;
     private final VeloRepository repository;
+    private final Boolean active;
 
-    public VeloDataSync(VeloClient client, VeloRepository repository) {
+    public VeloDataSync(VeloClient client, VeloRepository repository, @Value("${app.scheduling.enable:false}") Boolean active) {
         this.client = client;
         this.repository = repository;
+        this.active = active;
     }
 
     @Scheduled(fixedRate = 30000, initialDelay = 10000)
     public void runSync() {
         log.info("Velo Sync START");
 
-         client.retrieveStations()
+        if (active) {
+            runSyncDirect();
+        }
+
+        log.info("Velo Sync END");
+    }
+
+    public void runSyncDirect() {
+        client.retrieveStations()
                 .forEach(entry -> {
                     final Optional<VeloStation> inDb = repository.findById(entry.getId());
-                    if(inDb.isPresent()) {
+                    if (inDb.isPresent()) {
                         repository.save(merge(inDb.get(), entry));
                     } else {
                         repository.save(entry);
                     }
                 });
-
-        log.info("Velo Sync END");
     }
 
     private VeloStation merge(VeloStation fromDB, VeloStation fromApi) {
