@@ -19,7 +19,7 @@ public abstract class ContractVerifierBase {
     @BeforeEach
     public void before() {
         // Force sync before test start
-        sync.runSync();
+        sync.runSyncDirect();
 
         RestAssuredMockMvc.standaloneSetup(this.veloResource);
     }

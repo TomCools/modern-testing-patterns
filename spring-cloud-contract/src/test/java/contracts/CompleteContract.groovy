@@ -23,11 +23,11 @@ Contract.make {
                         consumer(13),
                         producer(~/[0-9]*/)
                 ),
-                bikes: 5,
-                zip: 2000,
-                address: "AN_ADDRESS",
+                bikes: $(
+                        consumer("5"),
+                        producer(~/[0-9]*/)
+                ),
                 status: "OPN",
-                name: "",
                 lat: $(
                         consumer("51.217820000000000000"),
                         producer(~/[0-9]*.[0-9]*/)
