@@ -1,4 +1,4 @@
-package be.tomcools.advancedtestingpatterns.testcontainers;
+package be.tomcools.advancedtestingpatterns.testcontainers.additional;
 
 import be.tomcools.advancedtestingpatterns.app.velo.VeloClient;
 import be.tomcools.advancedtestingpatterns.app.velo.VeloStation;
