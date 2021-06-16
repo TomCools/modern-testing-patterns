@@ -1,0 +1,3 @@
+#
+#Wed Jun 16 15:44:28 CEST 2021
+methods\ that\ are\ annotated\ with\ @Bean\ should\ be\ declared\ in\ classes\ that\ reside\ in\ a\ package\ 'be.tomcools.advancedtestingpatterns.app.configuration'=48fe4472-d7fd-4c03-8261-d092cb5d7222

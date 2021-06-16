@@ -1,7 +1,9 @@
 package be.tomcools.advancedtestingpatterns.app.velo;
 
+import lombok.Lombok;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 
@@ -51,4 +53,11 @@ public class VeloDataSync {
         fromDB.setStationType(fromApi.getStationType());
         return fromDB;
     }
+
+    @Bean
+    public Lombok injectableLombok() {
+        return new Lombok();
+    }
+    // For Architecture example only. Don't do this!
+
 }

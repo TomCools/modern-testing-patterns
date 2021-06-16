@@ -28,4 +28,5 @@ public class VeloClient {
         ResponseEntity<List<VeloStation>> stationList = client.exchange(url, HttpMethod.GET, null, type);
         return stationList.getBody();
     }
+
 }

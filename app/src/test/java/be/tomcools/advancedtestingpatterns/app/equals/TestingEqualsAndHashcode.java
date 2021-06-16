@@ -1,10 +1,11 @@
-package be.tomcools.advancedtestingpatterns.app;
+package be.tomcools.advancedtestingpatterns.app.equals;
 
 import be.tomcools.advancedtestingpatterns.app.velo.VeloStation;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+// Using Equalsverifier
 public class TestingEqualsAndHashcode {
 
     @Test

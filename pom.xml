@@ -23,6 +23,7 @@
         <module>wiremock</module>
         <module>spring-cloud-contract</module>
         <module>spring-cloud-contract-consumer</module>
+        <module>archunit</module>
     </modules>
 
     <properties>
@@ -33,6 +34,7 @@
         <selenium.version>3.141.59</selenium.version>
         <pitest.version>1.6.7</pitest.version>
         <equalsverifier.version>3.6.1</equalsverifier.version>
+        <archunit.version>0.19.0</archunit.version>
     </properties>
 
     <dependencies>
