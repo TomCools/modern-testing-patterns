@@ -31,6 +31,8 @@
         <wiremock.version>2.27.2</wiremock.version>
         <spring-cloud-contract.version>3.0.2</spring-cloud-contract.version>
         <selenium.version>3.141.59</selenium.version>
+        <pitest.version>1.6.7</pitest.version>
+        <equalsverifier.version>3.6.1</equalsverifier.version>
     </properties>
 
     <dependencies>
@@ -59,6 +61,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>nl.jqno.equalsverifier</groupId>
+            <artifactId>equalsverifier</artifactId>
+            <version>${equalsverifier.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -66,6 +74,26 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <configuration>
+                    <targetClasses>
+                        <param>be.tomcools.advancedtestingpatterns*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>be.tomcools.advancedtestingpatterns*</param>
+                    </targetTests>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-junit5-plugin</artifactId>
+                        <version>0.8</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
