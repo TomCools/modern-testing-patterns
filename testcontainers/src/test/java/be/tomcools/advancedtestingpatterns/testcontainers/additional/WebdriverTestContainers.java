@@ -1,5 +1,6 @@
 package be.tomcools.advancedtestingpatterns.testcontainers.additional;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -15,6 +16,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 class WebdriverTestContainers {
 
     @Test
+    @Disabled
     void exampleTestForSeleniumContainer() {
         final RemoteWebDriver driver = chrome.getWebDriver();
         driver.get("https://www.meetup.com/JUG-Bonn/events/277560762/");

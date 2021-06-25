@@ -47,11 +47,12 @@ public class VeloDataSync {
     }
 
     private VeloStation merge(VeloStation fromDB, VeloStation fromApi) {
-        fromDB.setBikes(fromApi.getBikes());
-        fromDB.setSlots(fromApi.getSlots());
-        fromDB.setStatus(fromApi.getStatus());
-        fromDB.setStationType(fromApi.getStationType());
-        return fromDB;
+        return fromDB.toBuilder()
+                .bikes(fromApi.getBikes())
+                .slots(fromApi.getSlots())
+                .status(fromApi.getStatus())
+                .stationType(fromApi.getStationType())
+                .build();
     }
 
     @Bean

@@ -1,14 +1,13 @@
 package be.tomcools.advancedtestingpatterns.app.velo;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @AllArgsConstructor
-@Data
+@EqualsAndHashCode
+@Getter
 @Builder(toBuilder = true)
 @Entity
 public class VeloStation {
