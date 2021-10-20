@@ -28,7 +28,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <testcontainers.version>1.15.3</testcontainers.version>
+        <testcontainers.version>1.16.1</testcontainers.version>
         <wiremock.version>2.27.2</wiremock.version>
         <spring-cloud-contract.version>3.0.2</spring-cloud-contract.version>
         <selenium.version>3.141.59</selenium.version>
