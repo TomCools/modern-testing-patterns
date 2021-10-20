@@ -52,8 +52,8 @@ class TestBreakingVeloClientToxiProxy {
         var proxy = TOXIPROXY.getProxy(VELOCONTAINER, 80);
         registry.add("app.velo.url", () -> String.format("http://%s:%d/velodata", proxy.getContainerIpAddress(), proxy.getProxyPort()));
         proxy.toxics()
-                .latency("latency",ToxicDirection.DOWNSTREAM, 100)
-                .setJitter(200);
+                .latency("latency",ToxicDirection.DOWNSTREAM, 20)
+                .setJitter(500);
     }
 
 
