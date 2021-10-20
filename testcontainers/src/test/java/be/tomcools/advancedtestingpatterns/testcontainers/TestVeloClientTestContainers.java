@@ -16,7 +16,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import java.util.List;
 
 @Testcontainers
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 class TestVeloClientTestContainers {
 
     @Autowired
@@ -32,7 +32,8 @@ class TestVeloClientTestContainers {
     @Container
     public static GenericContainer VELOCONTAINER = new GenericContainer(
             new ImageFromDockerfile()
-                    .withFileFromClasspath(".", "velotestcontainer/"));
+                    .withFileFromClasspath(".", "velotestcontainer/"))
+                    .withExposedPorts(80);
 
     @DynamicPropertySource
     static void registerApiUrl(DynamicPropertyRegistry registry) {
