@@ -26,9 +26,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 @Testcontainers
 class AzureStorageTestContainersTest {
 
-
     @Container // static for reuse
-    private static final AzureStorageContainer AZURE_STORAGE_CONTAINER = new AzureStorageContainer();
+    private static final AzureStorageContainer AZURE_STORAGE_CONTAINER = new AzureStorageContainer()
+            .withAccountKey("key");
 
     @Nested
     class BlobStorage {
