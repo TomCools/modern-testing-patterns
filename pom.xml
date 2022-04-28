@@ -28,13 +28,13 @@
 
     <properties>
         <java.version>17</java.version>
-        <testcontainers.version>1.16.3</testcontainers.version>
+        <testcontainers.version>1.17.1</testcontainers.version>
         <wiremock.version>2.27.2</wiremock.version>
-        <spring-cloud-contract.version>3.1.0</spring-cloud-contract.version>
+        <spring-cloud-contract.version>3.1.2</spring-cloud-contract.version>
         <selenium.version>3.141.59</selenium.version>
-        <pitest.version>1.7.3</pitest.version>
-        <equalsverifier.version>3.8.3</equalsverifier.version>
-        <archunit.version>0.22.0</archunit.version>
+        <pitest.version>1.7.5</pitest.version>
+        <equalsverifier.version>3.10</equalsverifier.version>
+        <archunit.version>0.23.1</archunit.version>
     </properties>
 
     <dependencies>
