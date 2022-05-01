@@ -1,6 +1,7 @@
 package be.tomcools.advancedtestingpatterns.testcontainers.additional;
 
 import com.github.dockerjava.api.DockerClient;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.DynamicPropertyRegistry;
@@ -25,6 +26,7 @@ public class LiquibaseContainerUpdater {
             .withPassword("sa");
 
     @Test
+    @Disabled("Should be run only with certain profiles ;)")
     public void pushNewImage() throws InterruptedException {
         // Startup and Liquibase happen first :-)
 
