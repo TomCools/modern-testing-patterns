@@ -45,6 +45,7 @@ public class ExampleTestUsingContainerWithData {
 
     @Test
     public void testIfDataSavedInUpdaterIsActuallyPresent() {
+        // we expect there to be 1 because we added it inside the tomcools/postgres image created by LiquibaseContainerUpdater.class
         assertThat(repo.count()).isEqualTo(1);
     }
 

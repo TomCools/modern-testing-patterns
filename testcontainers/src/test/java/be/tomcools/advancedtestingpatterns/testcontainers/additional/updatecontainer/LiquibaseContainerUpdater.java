@@ -44,8 +44,10 @@ public class LiquibaseContainerUpdater {
             .withDatabaseName("testcontainer")
             .withUsername("sa")
             .withPassword("sa");
+
     @Autowired
     VeloRepository repo;
+
     @Test
     @Disabled("Should be run only with certain profiles ;)")
     public void pushNewImage() throws InterruptedException {
@@ -61,11 +63,12 @@ public class LiquibaseContainerUpdater {
                 .withTag("main")
                 .exec();
 
-        //Push new image
-        final ResultCallback.Adapter<PushResponseItem> pushResult = dockerClient.pushImageCmd("tomcools/postgres:main")
+        // Push new image
+        dockerClient.pushImageCmd("tomcools/postgres:main")
                 .exec(new ResultCallback.Adapter<>() {
                     @Override
                     public void onNext(PushResponseItem object) {
+                        // This is just to fail the build in case push of new image fails
                         log.info(object.toString());
                         if(object.isErrorIndicated()) {
                             throw new RuntimeException("Failed push: " + object.getErrorDetail());
@@ -73,7 +76,6 @@ public class LiquibaseContainerUpdater {
                     }
                 })
                 .awaitCompletion();
-        System.out.println(pushResult);
     }
 
     @DynamicPropertySource
