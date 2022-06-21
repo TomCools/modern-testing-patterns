@@ -27,14 +27,15 @@ class LiquibaseContainerUpdaterTest {
     A blog post about this solution is in the works... not going to comment everything here in the meantime ;)
      */
 
-    public static final String DOCKER_IMAGE = "beo1975/postgres";
-    public static final String IMAGE_TAG = "main";
+    private static final String DOCKER_IMAGE = "tomcools/postgres";
+    private static final String IMAGE_TAG = "main";
+    static final String FULL_IMAGE_NAME = "%s:%s".formatted(DOCKER_IMAGE, IMAGE_TAG);
 
     @Container
-    public static final PostgreSQLContainer<?> SQL_CONTAINER = populateDatabase();
+    private static final PostgreSQLContainer<?> SQL_CONTAINER = populateDatabase();
 
     @Autowired
-    VeloRepository repo;
+    private VeloRepository repo;
 
     @Test
     @Disabled("Should be run only with certain profiles ;)")
@@ -53,7 +54,7 @@ class LiquibaseContainerUpdaterTest {
         log.info(result);
 
         // Push new image
-        dockerClient.pushImageCmd("%s:%s".formatted(DOCKER_IMAGE, IMAGE_TAG))
+        dockerClient.pushImageCmd(FULL_IMAGE_NAME)
                 .exec(new ResultCallback.Adapter<>() {
                     @Override
                     public void onNext(PushResponseItem object) {
@@ -68,7 +69,7 @@ class LiquibaseContainerUpdaterTest {
     }
 
     @DynamicPropertySource
-    static void registerTestContainerDatabaseProperties(DynamicPropertyRegistry registry) {
+    private static void registerTestContainerDatabaseProperties(DynamicPropertyRegistry registry) {
         registry.add("spring.datasource.url", SQL_CONTAINER::getJdbcUrl);
         registry.add("spring.datasource.username", SQL_CONTAINER::getUsername);
         registry.add("spring.datasource.password", SQL_CONTAINER::getPassword);
