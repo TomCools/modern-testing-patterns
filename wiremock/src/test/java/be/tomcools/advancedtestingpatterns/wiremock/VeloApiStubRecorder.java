@@ -7,29 +7,29 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@ContextConfiguration(initializers = {WireMockInitializer.class})
+@AutoConfigureWireMock(port = 0)
 public class VeloApiStubRecorder {
 
     @Autowired
     VeloClient veloClient;
 
     @Autowired
-    WireMockServer server;
+    WireMockServer wiremock;
 
     @Disabled("MANUAL UPDATE")
     @Test
     public void recordVeloApi() {
-        server.resetMappings(); // delete previous mappings
-        server.startRecording("https://www.velo-antwerpen.be/availability_map/getJsonObject");
+        wiremock.resetMappings(); // delete previous mappings
+        wiremock.startRecording("https://www.velo-antwerpen.be/availability_map/getJsonObject");
 
         veloClient.retrieveStations();
 
-        SnapshotRecordResult recordedMappings = server.stopRecording();
+        SnapshotRecordResult recordedMappings = wiremock.stopRecording();
         assertThat(recordedMappings.getStubMappings()).isNotEmpty();
     }
 }

@@ -2,8 +2,8 @@ package be.tomcools.advancedtestingpatterns.app.velo;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @AllArgsConstructor
 @EqualsAndHashCode

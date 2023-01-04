@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -18,14 +19,14 @@ import static com.github.tomakehurst.wiremock.client.WireMock.okJson;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@ContextConfiguration(initializers = {WireMockInitializer.class})
+@AutoConfigureWireMock(port = 0)
 class TestVeloClientWireMock {
 
     @Autowired
     VeloClient veloClient;
 
     @Autowired
-    private WireMockServer wireMockServer;
+    WireMockServer wireMockServer;
 
     @BeforeEach
     public void resetWireMock() {
