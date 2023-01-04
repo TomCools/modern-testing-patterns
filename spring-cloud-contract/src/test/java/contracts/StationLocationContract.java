@@ -20,8 +20,8 @@ public class StationLocationContract implements Supplier<Contract> {
             c.response(r -> {
                 r.status(r.OK());
                 r.body(map()
-                        .entry("lat", r.$(r.consumer("51.217820000000000000"), r.producer(r.regex("[0-9]*.[0-9]*"))))
-                        .entry("lon",  r.$(r.consumer("4.420650000000000000"), r.producer(r.regex("[0-9]*.[0-9]*")))));
+                        .entry("lat", r.$(r.consumer("51.21782"), r.producer(r.regex("[0-9]*.[0-9]*"))))
+                        .entry("lon",  r.$(r.consumer(r.value(4.42065)), r.producer(r.regex("[0-9]*.[0-9]*")))));
                 r.headers(h -> {
                     h.contentType(h.applicationJson());
                 });
