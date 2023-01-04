@@ -30,7 +30,7 @@
         <java.version>17</java.version>
         <testcontainers.version>1.17.1</testcontainers.version>
         <wiremock.version>2.27.2</wiremock.version>
-        <spring-cloud-contract.version>3.1.2</spring-cloud-contract.version>
+        <spring-cloud-contract.version>3.1.5</spring-cloud-contract.version>
         <selenium.version>3.141.59</selenium.version>
         <pitest.version>1.7.5</pitest.version>
         <equalsverifier.version>3.10</equalsverifier.version>
