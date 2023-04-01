@@ -1,0 +1,1 @@
+Method <be.tomcools.moderntestingpatterns.app.velo.VeloDataSync.injectableLombok()> is not declared in classes that reside in a package 'be.tomcools.moderntestingpatterns.app.configuration' in (VeloDataSync.java:60)

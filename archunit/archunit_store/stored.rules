@@ -1,3 +1,3 @@
 #
-#Wed Jun 16 15:44:28 CEST 2021
-methods\ that\ are\ annotated\ with\ @Bean\ should\ be\ declared\ in\ classes\ that\ reside\ in\ a\ package\ 'be.tomcools.moderntestingpatterns.app.configuration'=48fe4472-d7fd-4c03-8261-d092cb5d7222
+#Sat Apr 01 22:14:29 CEST 2023
+methods\ that\ are\ annotated\ with\ @Bean\ should\ be\ declared\ in\ classes\ that\ reside\ in\ a\ package\ 'be.tomcools.moderntestingpatterns.app.configuration'=c2d25a02-3506-4845-910a-ad0d99bc4e0e
