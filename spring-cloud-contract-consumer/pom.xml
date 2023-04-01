@@ -26,6 +26,12 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>be.tomcools</groupId>
+            <artifactId>spring-cloud-contract</artifactId>
+            <version>${project.version}</version>
+            <classifier>stubs</classifier>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
             <version>${spring-cloud-contract.version}</version>

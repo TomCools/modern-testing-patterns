@@ -1,3 +1,6 @@
 Modern Testing Patterns
 
 A repository used to during the demos of the Modern Testing Patterns talk.
+
+Notes:
+- Due to some weird behavior in Spring Cloud Contract, the consumer test can't be run in Intellij without setting up some paths.
