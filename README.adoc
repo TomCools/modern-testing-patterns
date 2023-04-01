@@ -1,0 +1,3 @@
+Modern Testing Patterns
+
+A repository used to during the demos of the Modern Testing Patterns talk.

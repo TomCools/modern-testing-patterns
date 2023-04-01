@@ -4,15 +4,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.1</version>
+        <version>3.0.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>be.tomcools</groupId>
-    <artifactId>advanced-testing-patterns</artifactId>
+    <artifactId>modern-testing-patterns</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>advanced-testing-patterns</name>
-    <description>Demo project for Advanced Testing Patterns in Spring Boot</description>
+    <name>modern-testing-patterns</name>
+    <description>Demo project for Modern Testing Patterns in Spring Boot</description>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
@@ -30,10 +30,9 @@
         <java.version>17</java.version>
         <testcontainers.version>1.17.6</testcontainers.version>
         <wiremock.version>2.27.2</wiremock.version>
-        <spring-cloud-contract.version>4.0.0</spring-cloud-contract.version>
-        <selenium.version>3.141.59</selenium.version>
-        <pitest.version>1.10.4</pitest.version>
-        <equalsverifier.version>3.10</equalsverifier.version>
+        <spring-cloud-contract.version>4.0.1</spring-cloud-contract.version>
+        <pitest.version>1.11.5</pitest.version>
+        <equalsverifier.version>3.14.1</equalsverifier.version>
         <archunit.version>1.0.1</archunit.version>
     </properties>
 
@@ -83,10 +82,10 @@
                 <version>${pitest.version}</version>
                 <configuration>
                     <targetClasses>
-                        <param>be.tomcools.advancedtestingpatterns*</param>
+                        <param>be.tomcools.moderntestingpatterns*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>be.tomcools.advancedtestingpatterns*</param>
+                        <param>be.tomcools.moderntestingpatterns*</param>
                     </targetTests>
                 </configuration>
                 <dependencies>
